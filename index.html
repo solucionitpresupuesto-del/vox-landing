@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VOX - Agencia de Estrategias Digitales & Integración IA. Vanguardia, Oportunidad y Expansión para tu marca.">
+    <title>VOX | Vanguardia · Oportunidad · Expansión</title>
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        voxBlack: '#000000',
+                        voxDark: '#0a0a0a',
+                        voxCard: '#121212',
+                        voxLima: '#C1E158',
+                        voxTurquesa: '#5CE1E6',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="relative">
+
+    <!-- Watermark Isotipo de Fondo -->
+    <div class="watermark-bg top-20 right-[-10%] w-[600px] h-[600px]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 40 L100 130 L160 40 L130 40 L100 90 L70 40 Z" stroke="#5CE1E6" stroke-width="8" fill="none"/>
+            <path d="M100 130 L160 40 L180 60 L100 170 L20 60 L40 40 Z" fill="#C1E158"/>
+        </svg>
+    </div>
+
+    <!-- NAVBAR FIXED -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <svg class="w-10 h-10 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 100 100" fill="none">
+                    <defs>
+                        <linearGradient id="voxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#C1E158" />
+                            <stop offset="100%" stop-color="#3B82F6" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 20 L50 70 L80 20 L65 20 L50 45 L35 20 Z" fill="url(#voxGrad)" />
+                    <path d="M50 70 L80 20 L90 35 L50 90 L10 35 L20 20 Z" fill="url(#voxGrad)" opacity="0.85" />
+                </svg>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-wider text-white">VOX</span>
+                    <span class="text-[9px] tracking-widest text-voxTurquesa font-semibold uppercase -mt-1">
+                        <span class="font-bold text-white">V</span>ANGUARDIA · <span class="font-bold text-white">O</span>PORTUNIDAD · <span class="font-bold text-white">X</span>PANSIÓN
+                    </span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 text-xs tracking-wider uppercase font-medium">
+                <a href="#esencia" class="hover:text-voxLima transition-colors">Esencia</a>
+                <a href="#servicios" class="hover:text-voxLima transition-colors">Servicios</a>
+                <a href="#ia-tool" class="hover:text-voxLima transition-colors">Test IA</a>
+                <a href="#casos" class="hover:text-voxLima transition-colors">Casos de Éxito</a>
+                <a href="#contacto" class="hover:text-voxLima transition-colors">Contacto</a>
+            </div>
+
+            <div class="hidden lg:block">
+                <a href="#contacto" class="btn-lima px-6 py-2.5 text-xs uppercase tracking-wider inline-block">
+                    Diagnóstico IA Gratuito
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-voxDark border-b border-voxTurquesa/20 px-6 py-6 space-y-4 text-sm font-semibold tracking-wider uppercase">
+            <a href="#esencia" class="block text-white hover:text-voxLima">Esencia</a>
+            <a href="#servicios" class="block text-white hover:text-voxLima">Servicios</a>
+            <a href="#ia-tool" class="block text-white hover:text-voxLima">Test IA Empresarial</a>
+            <a href="#casos" class="block text-white hover:text-voxLima">Casos de Éxito</a>
+            <a href="#contacto" class="block text-white hover:text-voxLima">Contacto</a>
+            <a href="#contacto" class="btn-lima w-full py-3 text-center block text-xs mt-4">
+                Diagnóstico IA Gratuito
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div class="inline-flex items-center gap-2 pill-turquesa px-5 py-2 text-xs font-semibold uppercase tracking-widest text-voxTurquesa mb-8">
+                <span class="w-2 h-2 rounded-full bg-voxLima animate-pulse"></span>
+                Agencia de Estrategias Digitales & IA
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-none mb-6">
+                ESTRATEGIA DIGITAL<br>
+                <span class="text-outline-turquesa">E INTEGRACIÓN IA</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-10">
+                Diseñamos campañas de marketing digital, optimizamos tus canales comerciales e incorporamos 
+                Inteligencia Artificial a tus procesos para generar <span class="text-voxLima font-semibold">expansión y resultados medibles</span>.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contacto" class="btn-lima w-full sm:w-auto px-8 py-4 text-sm uppercase tracking-wider flex items-center justify-center gap-3">
+                    <span>Agendar Asesoría Comercial</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#ia-tool" class="pill-turquesa w-full sm:w-auto px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:text-voxTurquesa flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-microchip text-voxLima"></i>
+                    <span>Evaluar Madurez Tecnológica</span>
+                </a>
+            </div>
+
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-10">
+                <div>
+                    <p class="text-3xl lg:text-4xl font-black text-voxLima">+300%</p>
+                    <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Eficiencia Operativa con IA</p>
+                </div>
+                <div>
+                    <p class="text-3xl lg:text-4xl font-black text-white">3.5x</p>
+                    <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">ROAS Promedio Publicitario</p>
+                </div>
+                <div>
+                    <p class="text-3xl lg:text-4xl font-black text-voxTurquesa">+150</p>
+                    <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Flujos Automatizados</p>
+                </div>
+                <div>
+                    <p class="text-3xl lg:text-4xl font-black text-white">100%</p>
+                    <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Estrategias a Medida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESENCIA VOX -->
+    <section id="esencia" class="py-24 bg-voxDark relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-voxTurquesa text-xs font-bold uppercase tracking-widest">Nuestra Filosofía</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-2">
+                    LA ESENCIA DE <span class="text-outline-lima">VOX</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4 text-sm">
+                    Tres pilares fundamentales que guían cada campaña, informe y decisión tecnológica.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="vox-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="text-voxLima text-4xl mb-6"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="text-2xl font-black uppercase mb-3 text-white">VANGUARDIA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Adoptamos las últimas tecnologías de IA, automatización y tendencias digitales para que tu marca lidere el mercado antes que su competencia.
+                    </p>
+                </div>
+                <div class="vox-card p-8 rounded-2xl relative overflow-hidden group border-voxTurquesa/40">
+                    <div class="text-voxTurquesa text-4xl mb-6"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="text-2xl font-black uppercase mb-3 text-white">OPORTUNIDAD</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Detectamos nichos de conversión desatendidos y cuellos de botella comerciales para convertirlos en ventajas competitivas de alta rentabilidad.
+                    </p>
+                </div>
+                <div class="vox-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="text-voxLima text-4xl mb-6"><i class="fa-solid fa-expand"></i></div>
+                    <h3 class="text-2xl font-black uppercase mb-3 text-white">EXPANSIÓN</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Escalamos la presencia de tu empresa con sistemas robustos y campañas publicitarias optimizadas para generar un crecimiento sostenible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-voxLima text-xs font-bold uppercase tracking-widest">Lo que hacemos</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-2">
+                        SERVICIOS<br><span class="text-outline-turquesa">ESPECIALIZADOS</span>
+                    </h2>
+                </div>
+                <p class="text-gray-400 max-w-md mt-4 md:mt-0 text-sm">
+                    Soluciones integrales diseñadas para sincronizar el área de marketing, ventas e innovación tecnológica de tu empresa.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="vox-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-voxLima/10 border border-voxLima/30 flex items-center justify-center text-voxLima text-2xl mb-6">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-4 text-white">Marketing Digital & Performance</h3>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Campañas de Meta Ads y Google Ads optimizadas por conversión.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Estrategia de posicionamiento de marca e identidad digital.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Funnels de ventas B2B / B2C y Captación de Leads Calificados.</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="#contacto" class="pill-turquesa text-center py-3 text-xs font-bold uppercase tracking-wider block text-white hover:text-voxTurquesa">Consultar Marketing</a>
+                    </div>
+                </div>
+
+                <div class="vox-card p-8 rounded-3xl flex flex-col justify-between relative border-voxLima/40">
+                    <div class="absolute -top-3 right-6 bg-voxLima text-black text-[10px] font-black uppercase px-3 py-1 rounded-full">Alta Demanda</div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-voxTurquesa/10 border border-voxTurquesa/30 flex items-center justify-center text-voxTurquesa text-2xl mb-6">
+                            <i class="fa-solid fa-handshake font-bold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-4 text-white">Asesoramiento Comercial</h3>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxTurquesa mt-1"></i><span>Auditoría y reestructuración de procesos de ventas.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxTurquesa mt-1"></i><span>Capacitación de equipos comerciales e implementación de CRM.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxTurquesa mt-1"></i><span>Diseño de guiones de venta, seguimiento y cierre.</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="#contacto" class="btn-lima text-center py-3 text-xs font-bold uppercase tracking-wider block">Solicitar Asesoría</a>
+                    </div>
+                </div>
+
+                <div class="vox-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-voxLima/10 border border-voxLima/30 flex items-center justify-center text-voxLima text-2xl mb-6">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-4 text-white">IA & Automatizaciones</h3>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Agentes de IA y Chatbots inteligentes para WhatsApp y Web.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Automatización de flujos de trabajo (Make / n8n / APIs).</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-voxLima mt-1"></i><span>Implementación de IA Generativa para contenidos.</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="#contacto" class="pill-turquesa text-center py-3 text-xs font-bold uppercase tracking-wider block text-white hover:text-voxTurquesa">Integrar IA Hoy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEST INTERACTIVO IA -->
+    <section id="ia-tool" class="py-24 bg-voxDark relative border-y border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="pill-turquesa px-4 py-1 text-[11px] font-bold uppercase text-voxTurquesa inline-block mb-3">Herramienta Interactiva VOX</span>
+                <h2 class="text-3xl sm:text-4xl font-black uppercase">
+                    TEST DE MADUREZ <span class="text-outline-lima">TECNOLÓGICA</span>
+                </h2>
+                <p class="text-gray-400 text-xs sm:text-sm mt-2">Responde 3 preguntas y descubre el potencial de automatización e IA de tu empresa en segundos.</p>
+            </div>
+
+            <div class="vox-card p-6 sm:p-10 rounded-3xl relative">
+                <div id="quizContainer">
+                    <div id="step1" class="quiz-step">
+                        <span class="text-voxTurquesa text-xs font-bold uppercase tracking-widest">Paso 1 de 3</span>
+                        <h4 class="text-lg sm:text-xl font-bold uppercase mt-2 mb-6">¿Cómo gestionas actualmente la atención de clientes y ventas?</h4>
+                        <div class="space-y-3">
+                            <button onclick="selectOption(1, 10)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">100% manual (Respondemos WhatsApp/Mail uno a uno)</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(1, 25)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Uso básico de CRM sin automatizaciones avanzadas</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(1, 40)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Tenemos chatbots simples estructurados por menú</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step2" class="quiz-step hidden">
+                        <span class="text-voxTurquesa text-xs font-bold uppercase tracking-widest">Paso 2 de 3</span>
+                        <h4 class="text-lg sm:text-xl font-bold uppercase mt-2 mb-6">¿Realizan campañas publicitarias digitales de manera constante?</h4>
+                        <div class="space-y-3">
+                            <button onclick="selectOption(2, 10)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">No realizamos pauta digital estructurada</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(2, 25)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Invertimos de forma esporádica sin medir el ROI exacto</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(2, 40)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Inversión mensual activa optimizada por conversiones</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step3" class="quiz-step hidden">
+                        <span class="text-voxTurquesa text-xs font-bold uppercase tracking-widest">Paso 3 de 3</span>
+                        <h4 class="text-lg sm:text-xl font-bold uppercase mt-2 mb-6">¿Qué nivel de integración de Inteligencia Artificial tienen tus procesos?</h4>
+                        <div class="space-y-3">
+                            <button onclick="selectOption(3, 5)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Ninguno / Solo uso eventual de ChatGPT personal</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(3, 15)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Herramientas aisladas para generación de textos e imágenes</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                            <button onclick="selectOption(3, 20)" class="w-full text-left p-4 rounded-xl border border-white/10 hover:border-voxTurquesa bg-black/50 transition-all flex items-center justify-between group">
+                                <span class="text-sm font-medium">Agentes de IA o flujos Make/n8n conectados al negocio</span>
+                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-voxTurquesa"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="resultStep" class="hidden text-center py-6">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-voxLima/20 border-2 border-voxLima flex items-center justify-center text-voxLima text-3xl mb-4">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase">Diagnóstico Estimado</h3>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Nivel de Optimización de tu Marca</p>
+                        
+                        <div class="my-6">
+                            <div class="text-5xl font-black text-voxLima" id="scoreValue">0%</div>
+                            <div class="w-full bg-black rounded-full h-3 max-w-md mx-auto mt-3 overflow-hidden border border-white/10">
+                                <div id="scoreBar" class="h-full bg-gradient-to-r from-voxTurquesa to-voxLima w-0 transition-all duration-1000"></div>
+                            </div>
+                        </div>
+
+                        <p id="resultText" class="text-sm text-gray-300 max-w-lg mx-auto mb-8"></p>
+
+                        <div class="flex flex-col sm:flex-row justify-center gap-3">
+                            <a href="#contacto" class="btn-lima px-8 py-3 text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                                <span>Solicitar Plan de Expansión VOX</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <button onclick="resetQuiz()" class="pill-turquesa px-6 py-3 text-xs uppercase tracking-wider text-white hover:text-voxTurquesa">Reiniciar Test</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS DE ÉXITO -->
+    <section id="casos" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-voxTurquesa text-xs font-bold uppercase tracking-widest">Resultados Comprobables</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-2">
+                    HISTORIAS DE <span class="text-outline-lima">EXPANSIÓN</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="vox-card p-8 rounded-3xl relative">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="pill-turquesa px-3 py-1 text-[10px] font-bold uppercase text-voxTurquesa">E-Commerce / Retail</span>
+                        <span class="text-voxLima font-bold text-sm">+240% Ventas</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase text-white mb-2">Automatización Comercial con Agente IA</h3>
+                    <p class="text-gray-400 text-sm mb-6">Implementación de un Agente conversacional conectado a WhatsApp y Shopify, reduciendo el tiempo de respuesta a 0 segundos y cerrando ventas fuera de horario.</p>
+                </div>
+                <div class="vox-card p-8 rounded-3xl relative">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="pill-turquesa px-3 py-1 text-[10px] font-bold uppercase text-voxTurquesa">Empresa B2B Servicios</span>
+                        <span class="text-voxLima font-bold text-sm">4.2x ROAS</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase text-white mb-2">Estrategia Digital & Performance B2B</h3>
+                    <p class="text-gray-400 text-sm mb-6">Reestructuración integral del embudo de ventas digital, campañas de anuncios hiper-segmentadas y capacitación del equipo comercial para elevar cierres.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-24 bg-voxDark relative border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="vox-card p-8 sm:p-14 rounded-3xl border-2 border-voxTurquesa/30 relative overflow-hidden">
+                <div class="grid md:grid-cols-5 gap-10">
+                    <div class="md:col-span-2 flex flex-col justify-between">
+                        <div>
+                            <span class="text-voxLima text-xs font-bold uppercase tracking-widest">Inicia Tu Transformación</span>
+                            <h2 class="text-3xl font-black uppercase mt-2 mb-4 leading-tight">
+                                ¿LISTO PARA LA<br><span class="text-outline-turquesa">EXPANSIÓN?</span>
+                            </h2>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Cuéntanos sobre tu proyecto. Analizaremos tu situación actual y te propondremos una estrategia.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="mailto:vox.estrategiasdigitales@gmail.com" class="flex items-center gap-3 hover:text-voxTurquesa transition-colors">
+                                <div class="w-8 h-8 rounded-full pill-turquesa flex items-center justify-center text-voxTurquesa text-xs shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                                <span class="text-xs text-gray-300 break-all">vox.estrategiasdigitales@gmail.com</span>
+                            </a>
+                            <a href="https://wa.me/5493513221016" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-voxLima transition-colors">
+                                <div class="w-8 h-8 rounded-full pill-turquesa flex items-center justify-center text-voxTurquesa text-xs shrink-0"><i class="fa-brands fa-whatsapp"></i></div>
+                                <span class="text-xs text-gray-300">351-322-1016</span>
+                            </a>
+                            <a href="https://instagram.com/vox.estrategiasdigitales" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-voxTurquesa transition-colors">
+                                <div class="w-8 h-8 rounded-full pill-turquesa flex items-center justify-center text-voxTurquesa text-xs shrink-0"><i class="fa-brands fa-instagram"></i></div>
+                                <span class="text-xs text-gray-300">@vox.estrategiasdigitales</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-3">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-300 mb-1">Nombre y Apellido</label>
+                                <input type="text" required placeholder="Ej. Santiago Basualdo" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-voxTurquesa transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-300 mb-1">Empresa / Marca</label>
+                                <input type="text" required placeholder="Ej. Mi Empresa S.A." class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-voxTurquesa transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-300 mb-1">Correo Electrónico / WhatsApp</label>
+                                <input type="text" required placeholder="contacto@tuempresa.com o +54 9..." class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-voxTurquesa transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-300 mb-1">Servicio de Interés Principal</label>
+                                <select class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-voxTurquesa transition-colors">
+                                    <option>Integración de IA & Automatización</option>
+                                    <option>Asesoramiento Comercial & Ventas</option>
+                                    <option>Marketing Digital & Performance</option>
+                                    <option>Estrategia Integral (Marketing + Comercial + IA)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-300 mb-1">Mensaje / Objetivos</label>
+                                <textarea rows="3" placeholder="Cuéntanos brevemente qué buscas lograr..." class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-voxTurquesa transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="btn-lima w-full py-4 text-xs uppercase tracking-wider font-bold">Enviar Solicitud de Diagnóstico</button>
+                        </form>
+                        <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-voxLima/10 border border-voxLima text-voxLima text-xs text-center font-semibold">
+                            ¡Gracias por tu mensaje! El equipo de VOX te contactará a la brevedad.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none">
+                    <path d="M20 20 L50 70 L80 20 L65 20 L50 45 L35 20 Z" fill="url(#voxGrad)" />
+                    <path d="M50 70 L80 20 L90 35 L50 90 L10 35 L20 20 Z" fill="url(#voxGrad)" opacity="0.85" />
+                </svg>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black text-white">VOX</span>
+                    <span class="text-[8px] text-gray-400 uppercase tracking-widest">
+                        <span class="text-voxLima font-bold">V</span>ANGUARDIA · <span class="text-voxTurquesa font-bold">O</span>PORTUNIDAD · <span class="text-voxLima font-bold">X</span>PANSIÓN
+                    </span>
+                </div>
+            </div>
+            <a href="https://instagram.com/vox.estrategiasdigitales" target="_blank" rel="noopener noreferrer" class="pill-turquesa px-6 py-2 text-xs text-white flex items-center gap-2">
+                <i class="fa-brands fa-instagram text-voxTurquesa"></i>
+                <span class="font-medium">@vox.estrategiasdigitales</span>
+            </a>
+            <p class="text-xs text-gray-500">&copy; 2026 VOX Estrategias Digitales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.text-outline-turquesa {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #5CE1E6;
+}
+
+.text-outline-lima {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #C1E158;
+}
+
+.pill-turquesa {
+    border: 1.5px solid #5CE1E6;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+.pill-turquesa:hover {
+    box-shadow: 0 0 15px rgba(92, 225, 230, 0.4);
+    background-color: rgba(92, 225, 230, 0.1);
+}
+
+.btn-lima {
+    background-color: #C1E158;
+    color: #000000;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn-lima:hover {
+    box-shadow: 0 0 20px rgba(193, 225, 88, 0.5);
+    transform: translateY(-2px);
+}
+
+.watermark-bg {
+    position: absolute;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.vox-card {
+    background-color: rgba(18, 18, 18, 0.8);
+    border: 1px solid rgba(92, 225, 230, 0.15);
+    transition: all 0.3s ease;
+}
+.vox-card:hover {
+    border-color: #5CE1E6;
+    box-shadow: 0 0 25px rgba(92, 225, 230, 0.15);
+    transform: translateY(-4px);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 4px; border: 1px solid #5CE1E6; }
